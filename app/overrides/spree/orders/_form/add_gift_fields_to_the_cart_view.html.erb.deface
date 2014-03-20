@@ -1,0 +1,56 @@
+<!-- insert_bottom "tbody#line_items" -->
+
+<tr class="line-item">
+  <td colspan="6">
+    <div data-hook="gift">
+      <header>
+        <div class="gift_field">
+          <%= order_form.check_box :gift %>
+          <%= order_form.label :gift %>
+          <% if order_form.object.gift %>
+            <%= link_to Spree.t(:edit), '#', id: 'edit_gift' %>
+          <% end %>
+        </div>
+      </header>
+
+      <section class="gift_fields">
+        <div class="gift_field">
+          <%= order_form.label :gift_to %>
+          <%= order_form.text_field :gift_to %>
+        </div>
+
+        <div class="gift_field">
+          <%= order_form.label :gift_from %>
+          <%= order_form.text_field :gift_from %>
+        </div>
+
+        <div class="gift_field">
+          <%= order_form.label :gift_note %>
+          <%= order_form.text_area :gift_note %>
+        </div>
+      </section>
+    </div>
+  </td>
+</tr>
+
+<script type="application/javascript">
+  $(function(){
+      $('#order_gift').on('change', function(e){
+          var $checkbox = $(e.target);
+          if($checkbox.is(':checked')){
+              $('.gift_fields').show();
+              $('#edit_gift').show();
+              $('#order_gift_to').focus();
+          } else {
+              $('#edit_gift').hide();
+              $('.gift_fields').hide();
+              $('.gift_fields input, .gift_fields textarea').val('');
+          }
+      });
+
+      $('#edit_gift').on('click', function(e){
+          e.preventDefault();
+          $('.gift_fields').show();
+      });
+  });
+</script>

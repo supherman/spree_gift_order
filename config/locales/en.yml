@@ -2,4 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  helpers:
+    label:
+      order:
+        gift: is a gift?
+        gift_from: 'From'
+        gift_to: 'To'
+        gift_note: 'Message'

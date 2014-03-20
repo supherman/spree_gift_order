@@ -1,0 +1,44 @@
+/*
+ *= require store/spree_frontend
+*/
+
+.gift_fields {
+  display: none;
+}
+
+header .gift_field {
+  text-align: right;
+  float: right;
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+.gift_field {
+  width: 365px;
+  margin-bottom: 10px;
+
+  label, input, textarea {
+    display: inline-block;
+    min-width: 60px;
+  }
+
+  input[type=checkbox] {
+    margin-right: 10px;
+  }
+
+  textarea {
+    width: 291px;
+    height: 100px;
+  }
+
+  label {
+    margin-right: 10px;
+
+    &:after {
+      content: ': '
+    }
+  }
+}
