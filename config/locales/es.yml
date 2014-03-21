@@ -1,0 +1,14 @@
+es:
+  spree:
+    gift_adjustment_label: Comision por envoltura de regalo
+    gift_order_settings: Configuracion de notas de regalo
+    create_gift_adjustment: Crear ajuste
+    gift_adjustment_amount: Monto del ajuste
+    gift_adjustment_label: Nombre del ajuste
+  helpers:
+    label:
+      order:
+        gift: ¿Es un regalo?
+        gift_from: 'De'
+        gift_to: 'Para quién'
+        gift_note: 'Mensaje'
