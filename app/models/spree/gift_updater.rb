@@ -15,6 +15,8 @@ module Spree
       end
     end
 
+    private
+
     def create_adjustment!
       remove_adjustment! if has_gift_adjustment?
       order.adjustments.create label: adjustment_label, amount: adjustment_amount
