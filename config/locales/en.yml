@@ -2,6 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  spree:
+    gift_adjustment_label: Gift wrapping fee
   helpers:
     label:
       order:
