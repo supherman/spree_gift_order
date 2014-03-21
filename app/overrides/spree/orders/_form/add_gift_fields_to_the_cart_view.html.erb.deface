@@ -1,6 +1,6 @@
 <!-- insert_bottom "tbody#line_items" -->
 
-<tr class="line-item">
+<tr class="line-item gift-form">
   <td colspan="6">
     <div data-hook="gift">
       <header>
