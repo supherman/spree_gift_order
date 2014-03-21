@@ -4,6 +4,10 @@
 en:
   spree:
     gift_adjustment_label: Gift wrapping fee
+    gift_order_settings: Gift order settings
+    create_gift_adjustment: Create adjustment
+    gift_adjustment_amount: Adjustment amount
+    gift_adjustment_label: Adjustment label
   helpers:
     label:
       order:

@@ -1,0 +1,38 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<% content_for :page_title do %>
+  <%= t(:gift_order_settings) %>
+<% end %>
+
+<%= form_tag admin_gift_order_settings_path, :method => :put do %>
+  <fieldset class="no-border-top">
+    <fieldset class="no-border-bottom">
+      <legend align="center"><%= t(:general_settings)%></legend>
+
+      <div class="alpha eight columns">
+        <div data-hook="gift_order_adjustment" class="field">
+          <%= preference_field_tag 'preferences[create_adjustment]', SpreeGiftOrder::Config[:create_adjustment], type: :boolean %>
+          <%= label_tag 'preferences[create_adjustment]', t(:create_gift_adjustment) %>
+        </div>
+      </div>
+
+      <div class="alpha eight columns">
+        <div data-hook="gift_order_adjustment_label" class="field">
+          <%= label_tag 'preferences[adjustment_label]', t(:gift_adjustment_label) %>
+          <%= preference_field_tag 'preferences[adjustment_label]', SpreeGiftOrder::Config[:adjustment_label], type: :string %>
+        </div>
+      </div>
+
+      <div class="alpha eight columns">
+        <div data-hook="gift_order_adjustment_amount" class="field">
+          <%= label_tag 'preferences[adjustment_amount]', t(:gift_adjustment_amount) %>
+          <%= preference_field_tag 'preferences[adjustment_amount]', SpreeGiftOrder::Config[:adjustment_amount], type: :integer %>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="form-buttons filter-actions actions" data-hook="buttons">
+      <%= button t(:update), 'icon-refresh' %>
+    </div>
+  </fieldset>
+<% end %>
