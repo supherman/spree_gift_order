@@ -6,6 +6,7 @@ es:
     gift_adjustment_amount: Monto del ajuste
     gift_adjustment_label: Nombre del ajuste
     gift_note_max_legth: Caracteres
+    gift_adjustment_advice: Advertencia de ajuste
   helpers:
     label:
       order:

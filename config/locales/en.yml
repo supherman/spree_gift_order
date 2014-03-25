@@ -9,6 +9,7 @@ en:
     gift_adjustment_amount: Adjustment amount
     gift_adjustment_label: Adjustment label
     gift_note_max_legth: Chars
+    gift_adjustment_advice: Adjustment advice
   helpers:
     label:
       order:

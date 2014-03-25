@@ -29,6 +29,11 @@
           <%= order_form.text_area :gift_note, maxlength: 250 %>
           <span class="char-counter"><strong>250</strong><%= Spree.t(:gift_note_max_legth) %></span>
         </div>
+        <% if SpreeGiftOrder::Config[:create_adjustment] %>
+          <div class="gift_field">
+            <span class="adjustmen-advice"><%= SpreeGiftOrder::Config[:adjustment_advice] %></span>
+          </div>
+        <% end %>
       </section>
     </div>
   </td>
