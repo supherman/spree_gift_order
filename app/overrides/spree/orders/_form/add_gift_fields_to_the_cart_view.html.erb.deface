@@ -31,7 +31,7 @@
         </div>
         <% if SpreeGiftOrder::Config[:create_adjustment] %>
           <div class="gift_field">
-            <span class="adjustmen-advice"><%= SpreeGiftOrder::Config[:adjustment_advice] %></span>
+            <span class="adjustment-advice"><%= SpreeGiftOrder::Config[:adjustment_advice] %></span>
           </div>
         <% end %>
       </section>
