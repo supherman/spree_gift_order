@@ -16,17 +16,18 @@
       <section class="gift_fields">
         <div class="gift_field">
           <%= order_form.label :gift_to %>
-          <%= order_form.text_field :gift_to %>
+          <%= order_form.text_field :gift_to, maxlength: 50 %>
         </div>
 
         <div class="gift_field">
           <%= order_form.label :gift_from %>
-          <%= order_form.text_field :gift_from %>
+          <%= order_form.text_field :gift_from, maxlength: 50 %>
         </div>
 
         <div class="gift_field">
           <%= order_form.label :gift_note %>
-          <%= order_form.text_area :gift_note %>
+          <%= order_form.text_area :gift_note, maxlength: 250 %>
+          <span class="char-counter"><strong>250</strong><%= Spree.t(:gift_note_max_legth) %></span>
         </div>
       </section>
     </div>
@@ -52,5 +53,12 @@
           e.preventDefault();
           $('.gift_fields').show();
       });
+
+      $('#order_gift_note').on('keyup', function(e){
+        var remaning = 250 - $(this).val().length
+        $('.char-counter strong').text(remaning)
+      });
+
+
   });
 </script>

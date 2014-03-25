@@ -19,6 +19,19 @@ header .gift_field {
 .gift_field {
   width: 365px;
   margin-bottom: 10px;
+  position: relative;
+
+
+  span.char-counter {
+    position: absolute;
+    bottom: 5px;
+    right: 25px;
+    color: gray;
+  }
+
+  input[type=text] {
+    width: 290px;
+  }
 
   label, input, textarea {
     display: inline-block;

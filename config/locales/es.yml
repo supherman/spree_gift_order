@@ -5,6 +5,7 @@ es:
     create_gift_adjustment: Crear ajuste
     gift_adjustment_amount: Monto del ajuste
     gift_adjustment_label: Nombre del ajuste
+    gift_note_max_legth: Caracteres
   helpers:
     label:
       order:
