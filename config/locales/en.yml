@@ -10,6 +10,8 @@ en:
     gift_adjustment_label: Adjustment label
     gift_note_max_legth: Chars
     gift_adjustment_advice: Adjustment advice
+    gift_description: Description
+    gift_info: More
   helpers:
     label:
       order:

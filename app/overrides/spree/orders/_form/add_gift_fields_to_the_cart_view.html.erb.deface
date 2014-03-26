@@ -7,6 +7,12 @@
         <div class="gift_field">
           <%= order_form.check_box :gift %>
           <%= order_form.label :gift %>
+          <%= link_to Spree.t(:gift_info), '#info-modal', id: 'gift_info' %>
+          <div id="info-modal">
+            <p>
+              <%= SpreeGiftOrder::Config[:description] %>
+            </p>
+          </div>
           <% if order_form.object.gift %>
             <%= link_to Spree.t(:edit), '#', id: 'edit_gift' %>
           <% end %>
@@ -64,6 +70,6 @@
         $('.char-counter strong').text(remaning)
       });
 
-
+      $('#gift_info').leanModal();
   });
 </script>

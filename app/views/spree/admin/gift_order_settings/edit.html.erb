@@ -29,10 +29,18 @@
           <%= preference_field_tag 'preferences[adjustment_amount]', SpreeGiftOrder::Config[:adjustment_amount], type: :integer %>
         </div>
       </div>
+
       <div class="alpha eight columns">
         <div data-hook="gift_order_adjustment_amount" class="field">
           <%= label_tag 'preferences[adjustment_advice]', Spree.t(:gift_adjustment_advice) %>
           <%= preference_field_tag 'preferences[adjustment_advice]', SpreeGiftOrder::Config[:adjustment_advice], type: :string %>
+        </div>
+      </div>
+
+      <div class="alpha eight columns">
+        <div data-hook="gift_order_adjustment_amount" class="field">
+          <%= label_tag 'preferences[description]', Spree.t(:gift_description) %>
+          <%= preference_field_tag 'preferences[description]', SpreeGiftOrder::Config[:description], type: :text %>
         </div>
       </div>
     </fieldset>

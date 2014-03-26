@@ -7,6 +7,8 @@ es:
     gift_adjustment_label: Nombre del ajuste
     gift_note_max_legth: Caracteres
     gift_adjustment_advice: Advertencia de ajuste
+    gift_description: Descripción
+    gift_info: Ver más
   helpers:
     label:
       order:
