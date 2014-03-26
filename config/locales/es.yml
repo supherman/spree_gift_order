@@ -9,6 +9,7 @@ es:
     gift_adjustment_advice: Advertencia de ajuste
     gift_description: Descripción
     gift_info: Ver más
+    gift_enabled: Activar notas de regalo
   helpers:
     label:
       order:

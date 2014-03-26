@@ -10,6 +10,13 @@
       <legend align="center"><%= t(:general_settings)%></legend>
 
       <div class="alpha eight columns">
+        <div data-hook="gift_order_enabled" class="field">
+          <%= preference_field_tag 'preferences[enabled]', SpreeGiftOrder::Config[:enabled], type: :boolean %>
+          <%= label_tag 'preferences[enabled]', Spree.t(:gift_enabled) %>
+        </div>
+      </div>
+
+      <div class="alpha eight columns">
         <div data-hook="gift_order_adjustment" class="field">
           <%= preference_field_tag 'preferences[create_adjustment]', SpreeGiftOrder::Config[:create_adjustment], type: :boolean %>
           <%= label_tag 'preferences[create_adjustment]', Spree.t(:create_gift_adjustment) %>

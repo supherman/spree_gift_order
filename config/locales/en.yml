@@ -12,6 +12,7 @@ en:
     gift_adjustment_advice: Adjustment advice
     gift_description: Description
     gift_info: More
+    gift_enabled: Activate gift notes
   helpers:
     label:
       order:

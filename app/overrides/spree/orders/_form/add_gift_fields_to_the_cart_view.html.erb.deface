@@ -1,75 +1,76 @@
 <!-- insert_bottom "tbody#line_items" -->
-
-<tr class="line-item gift-form">
-  <td colspan="6">
-    <div data-hook="gift">
-      <header>
-        <div class="gift_field">
-          <%= order_form.check_box :gift %>
-          <%= order_form.label :gift %>
-          <%= link_to Spree.t(:gift_info), '#info-modal', id: 'gift_info' %>
-          <div id="info-modal">
-            <p>
-              <%= SpreeGiftOrder::Config[:description] %>
-            </p>
-          </div>
-          <% if order_form.object.gift %>
-            <%= link_to Spree.t(:edit), '#', id: 'edit_gift' %>
-          <% end %>
-        </div>
-      </header>
-
-      <section class="gift_fields">
-        <div class="gift_field">
-          <%= order_form.label :gift_to %>
-          <%= order_form.text_field :gift_to, maxlength: 50 %>
-        </div>
-
-        <div class="gift_field">
-          <%= order_form.label :gift_from %>
-          <%= order_form.text_field :gift_from, maxlength: 50 %>
-        </div>
-
-        <div class="gift_field">
-          <%= order_form.label :gift_note %>
-          <%= order_form.text_area :gift_note, maxlength: 250 %>
-          <span class="char-counter"><strong>250</strong><%= Spree.t(:gift_note_max_legth) %></span>
-        </div>
-        <% if SpreeGiftOrder::Config[:create_adjustment] %>
+<% if SpreeGiftOrder::Config[:enabled] %>
+  <tr class="line-item gift-form">
+    <td colspan="6">
+      <div data-hook="gift">
+        <header>
           <div class="gift_field">
-            <span class="adjustment-advice"><%= SpreeGiftOrder::Config[:adjustment_advice] %></span>
+            <%= order_form.check_box :gift %>
+            <%= order_form.label :gift %>
+            <%= link_to Spree.t(:gift_info), '#info-modal', id: 'gift_info' %>
+            <div id="info-modal">
+              <p>
+                <%= SpreeGiftOrder::Config[:description] %>
+              </p>
+            </div>
+            <% if order_form.object.gift %>
+              <%= link_to Spree.t(:edit), '#', id: 'edit_gift' %>
+            <% end %>
           </div>
-        <% end %>
-      </section>
-    </div>
-  </td>
-</tr>
+        </header>
 
-<script type="application/javascript">
-  $(function(){
-      $('#order_gift').on('change', function(e){
-          var $checkbox = $(e.target);
-          if($checkbox.is(':checked')){
-              $('.gift_fields').show();
-              $('#edit_gift').show();
-              $('#order_gift_to').focus();
-          } else {
-              $('#edit_gift').hide();
-              $('.gift_fields').hide();
-              $('.gift_fields input, .gift_fields textarea').val('');
-          }
-      });
+        <section class="gift_fields">
+          <div class="gift_field">
+            <%= order_form.label :gift_to %>
+            <%= order_form.text_field :gift_to, maxlength: 50 %>
+          </div>
 
-      $('#edit_gift').on('click', function(e){
-          e.preventDefault();
-          $('.gift_fields').show();
-      });
+          <div class="gift_field">
+            <%= order_form.label :gift_from %>
+            <%= order_form.text_field :gift_from, maxlength: 50 %>
+          </div>
 
-      $('#order_gift_note').on('keyup', function(e){
-        var remaning = 250 - $(this).val().length
-        $('.char-counter strong').text(remaning)
-      });
+          <div class="gift_field">
+            <%= order_form.label :gift_note %>
+            <%= order_form.text_area :gift_note, maxlength: 250 %>
+            <span class="char-counter"><strong>250</strong><%= Spree.t(:gift_note_max_legth) %></span>
+          </div>
+          <% if SpreeGiftOrder::Config[:create_adjustment] %>
+            <div class="gift_field">
+              <span class="adjustment-advice"><%= SpreeGiftOrder::Config[:adjustment_advice] %></span>
+            </div>
+          <% end %>
+        </section>
+      </div>
+    </td>
+  </tr>
 
-      $('#gift_info').leanModal();
-  });
-</script>
+  <script type="application/javascript">
+    $(function(){
+        $('#order_gift').on('change', function(e){
+            var $checkbox = $(e.target);
+            if($checkbox.is(':checked')){
+                $('.gift_fields').show();
+                $('#edit_gift').show();
+                $('#order_gift_to').focus();
+            } else {
+                $('#edit_gift').hide();
+                $('.gift_fields').hide();
+                $('.gift_fields input, .gift_fields textarea').val('');
+            }
+        });
+
+        $('#edit_gift').on('click', function(e){
+            e.preventDefault();
+            $('.gift_fields').show();
+        });
+
+        $('#order_gift_note').on('keyup', function(e){
+          var remaning = 250 - $(this).val().length
+          $('.char-counter strong').text(remaning)
+        });
+
+        $('#gift_info').leanModal();
+    });
+  </script>
+<% end %>
