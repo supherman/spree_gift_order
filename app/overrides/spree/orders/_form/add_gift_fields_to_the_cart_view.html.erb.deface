@@ -9,6 +9,7 @@
             <%= order_form.label :gift %>
             <%= link_to Spree.t(:gift_info), '#info-modal', id: 'gift_info' %>
             <div id="info-modal">
+              <%= link_to '', '#', class: 'modal-close' %>
               <p>
                 <%= SpreeGiftOrder::Config[:description] %>
               </p>
@@ -70,7 +71,7 @@
           $('.char-counter strong').text(remaning)
         });
 
-        $('#gift_info').leanModal();
+        $('#gift_info').leanModal({closeButton: '.modal-close', overlay: 0.25});
     });
   </script>
 <% end %>

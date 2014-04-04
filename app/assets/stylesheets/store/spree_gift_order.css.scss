@@ -2,6 +2,8 @@
  *= require store/spree_frontend
 */
 
+@import 'admin/plugins/font-awesome';
+
 .gift_fields {
   display: none;
 }
@@ -26,6 +28,21 @@ div#info-modal {
 
   p {
     margin: 0;
+  }
+
+  .modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 40px;
+    color: black;
+    margin-top: -8px;
+    margin-right: -17px;
+
+    &:before {
+      font-family: FontAwesome;
+      content: "\f05c";
+    }
   }
 }
 
