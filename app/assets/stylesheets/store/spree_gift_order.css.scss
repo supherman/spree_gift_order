@@ -75,9 +75,20 @@ div#info-modal {
     margin-right: 10px;
   }
 
+  .note-wrapper {
+    display: inline-block;
+    padding-bottom: 25px;
+    border: 1px solid #d9d9db;
+
+    &.active {
+      border-color: #00adee;
+    }
+  }
+
   textarea {
     width: 291px;
     height: 100px;
+    border: none;
   }
 
   label {

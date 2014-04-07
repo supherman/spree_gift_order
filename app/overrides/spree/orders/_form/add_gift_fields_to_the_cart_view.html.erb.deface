@@ -33,7 +33,9 @@
 
           <div class="gift_field">
             <%= order_form.label :gift_note %>
-            <%= order_form.text_area :gift_note, maxlength: 250 %>
+            <div class="note-wrapper">
+              <%= order_form.text_area :gift_note, maxlength: 250 %>
+            </div>
             <span class="char-counter"><strong>250</strong><%= Spree.t(:gift_note_max_legth) %></span>
           </div>
           <% if SpreeGiftOrder::Config[:create_adjustment] %>
@@ -72,6 +74,9 @@
         });
 
         $('#gift_info').leanModal({closeButton: '.modal-close', overlay: 0.25});
+
+        $('#order_gift_note').on('focus', function(){ $('.note-wrapper').addClass('active') });
+        $('#order_gift_note').on('focusout', function(){ $('.note-wrapper').removeClass('active') });
     });
   </script>
 <% end %>
